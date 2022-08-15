@@ -32,7 +32,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-
+$routes->get('/pelanggan', 'Pelanggan::tampil');
+$routes->get('/form', 'Pelanggan::form');
+$routes->add('/spelanggan', 'Pelanggan::save');
+$routes->get('/pelanggan/delete/(:segment)', 'Pelanggan::delete/$1');
+$routes->add('/pelanggan/edit/(:segment)', 'Pelanggan::edit/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
